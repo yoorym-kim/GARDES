@@ -1,20 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/background"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".main.MainActivity">
-
-    <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="onButtonClicked"
-        android:text="Button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="327dp" />
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+    android:background="@drawable/gradient_disconnect"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+        <!--     // 상단 고정 -->
+        <TextView android:id="@+id/connectname" android:layout_width="match_parent" android:layout_height="25dp" android:fontFamily="@font/nanumsquareextrabold" android:gravity="center" android:text="연결 기기 명" android:textColor="#FFFFFF" android:textSize="20sp"/>
+        <LinearLayout android:layout_width="match_parent" android:layout_height="10dp" android:layout_weight="1" android:orientation="vertical">
+                <TextView android:id="@+id/location" android:layout_width="wrap_content" android:layout_height="40dp" android:layout_gravity="center" android:fontFamily="@font/nanumsquareextrabold" android:text="주소" android:textColor="#FFFFFF" android:textSize="20dp"/>
+                <ImageView android:id="@+id/nowstate" android:scaleType="fitCenter" android:layout_weight="3" android:layout_gravity="center" android:layout_width="600px" android:layout_height="600px" android:src="@drawable/bluetooth"/>
+                <TextView android:id="@+id/state" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="center" android:fontFamily="@font/nanumsquareextrabold" android:text="비연결상태" android:textColor="#FFFFFF" android:textSize="50sp"/>
+                <TextView android:id="@+id/state_eval" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="center" android:fontFamily="@font/nanumsquareextrabold" android:includeFontPadding="false" android:text="탭해서 블루투스 연결" android:textColor="#FFFFFF" android:textSize="20sp"/>
+        </LinearLayout>
+        // 2번칸
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_margin="15dp"
+            android:background="@drawable/edit_round"
+            android:orientation="horizontal">
+                //pm2.5
+                <LinearLayout android:layout_width="wrap_content" android:layout_height="match_parent" android:layout_margin="15dp" android:orientation="vertical">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="center" android:fontFamily="@font/nanumsquareextrabold" android:text="지금 PM2.5" android:textColor="#FFFFFF" android:textSize="15dp"/>
+                        <ImageView android:id="@+id/pm25image" android:layout_width="160dp" android:layout_height="80dp" android:scaleType="fitCenter" android:src="@drawable/smile"/>
+                        <TextView android:id="@+id/pm25" android:layout_width="wrap_content" android:layout_height="match_parent" android:layout_gravity="center" android:fontFamily="@font/nanumsquareextrabold" android:gravity="center" android:hint="PM2.5" android:textColor="#FFFFFF" android:textSize="20dp"/>
+                </LinearLayout>
+                //pm10
+                <LinearLayout android:layout_width="wrap_content" android:layout_height="match_parent" android:layout_margin="15dp" android:orientation="vertical">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="center" android:fontFamily="@font/nanumsquareextrabold" android:text="지금 PM10" android:textColor="#FFFFFF" android:textSize="15dp"/>
+                        <ImageView android:id="@+id/pm10image" android:layout_width="160dp" android:layout_height="80dp" android:scaleType="fitCenter" android:src="@drawable/smile"/>
+                        <TextView android:id="@+id/pm10" android:layout_width="wrap_content" android:layout_height="match_parent" android:layout_gravity="center" android:fontFamily="@font/nanumsquareextrabold" android:gravity="center" android:hint="PM10" android:textColor="#FFFFFF" android:textSize="20dp"/>
+                </LinearLayout>
+        </LinearLayout>
+        //맨아래 고정 버튼들
+        <LinearLayout android:layout_width="match_parent" android:layout_height="150dp" android:background="#FFFFFF" android:orientation="horizontal">
+                //자동모드 버튼
+                <LinearLayout android:layout_width="wrap_content" android:layout_height="150dp" android:layout_margin="18dp" android:orientation="vertical">
+                        <ToggleButton android:id="@+id/power" android:layout_width="100dp" android:layout_height="100dp" android:layout_gravity="center" android:background="@drawable/power" android:text="AUTO" android:textOff=" " android:textOn=" "/>
+                        <TextView android:id="@+id/power_onoff" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="center" android:fontFamily="@font/nanumsquareextrabold" android:includeFontPadding="false" android:text="꺼짐" android:textColor="#80000000" android:textSize="20sp"/>
+                </LinearLayout>
+                // 바람단계 버튼 //파워 버튼
+                <LinearLayout android:layout_width="wrap_content" android:layout_height="150dp" android:layout_margin="18dp" android:orientation="vertical">
+                        <ToggleButton android:id="@+id/auto" android:layout_width="100dp" android:layout_height="100dp" android:layout_gravity="center" android:textOff=" " android:textOn=" " android:background="@drawable/auto" android:text="power"/>
+                        <TextView android:id="@+id/auto_onoff" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="center" android:fontFamily="@font/nanumsquareextrabold" android:includeFontPadding="false" android:text="꺼짐" android:textColor="#80000000" android:textSize="20sp"/>
+                </LinearLayout>
+                <LinearLayout android:layout_width="wrap_content" android:layout_height="150dp" android:layout_margin="18dp" android:orientation="vertical">
+                        <ImageButton android:id="@+id/help" android:layout_width="100dp" android:layout_height="100dp" android:layout_gravity="center" android:background="@drawable/help" android:text="help"/>
+                        <TextView android:id="@+id/wind_step" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="center" android:fontFamily="@font/nanumsquareextrabold" android:includeFontPadding="false" android:text="도움말" android:textColor="#80000000" android:textSize="20sp"/>
+                </LinearLayout>
+        </LinearLayout>
+</LinearLayout>

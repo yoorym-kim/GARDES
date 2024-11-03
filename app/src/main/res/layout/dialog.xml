@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/background"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/edit_round_black"
+    android:orientation="vertical"
+    tools:context=".main.MainActivity">
+    <!--     // 상단 고정 -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:fontFamily="@font/nanumsquareextrabold"
+        android:gravity="center" android:text="도움말"
+        android:textColor="#FFFFFF"
+        android:textSize="40sp"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/location"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:fontFamily="@font/nanumsquareextrabold"
+            android:text="이곳에 현재 위치가 출력됩니다."
+            android:textColor="#FFFFFF"
+            android:textSize="20dp"/>
+        <ImageView
+            android:id="@+id/nowstate"
+            android:scaleType="fitCenter"
+            android:adjustViewBounds="true"
+            android:layout_weight="3"
+            android:layout_gravity="center"
+            android:layout_width="600px"
+            android:layout_height="600px"
+            android:src="@drawable/smile"/>
+        <TextView
+            android:id="@+id/state"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/nanumsquareextrabold"
+            android:text="종합 공기 수치"
+            android:textColor="#FFFFFF"
+            android:textSize="50sp"/>
+        <TextView android:id="@+id/state_eval" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="center" android:fontFamily="@font/nanumsquareextrabold" android:includeFontPadding="false" android:text="pm2.5와 pm10값을 기반으로 \n 현재 실내의 공기수치를 평가합니다." android:textColor="#FFFFFF" android:textSize="20sp"/>
+    </LinearLayout>
+    // 2번칸
+    <LinearLayout android:layout_width="match_parent" android:layout_height="150dp" android:layout_margin="15dp" android:background="@drawable/edit_round" android:orientation="horizontal">
+        //pm2.5
+        <LinearLayout android:layout_width="wrap_content" android:layout_height="match_parent" android:layout_margin="15dp" android:orientation="vertical">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="center" android:fontFamily="@font/nanumsquareextrabold" android:text="지금 PM2.5" android:textColor="#FFFFFF" android:textSize="15dp"/>
+            <ImageView android:id="@+id/pm25image" android:layout_width="160dp" android:layout_height="80dp" android:scaleType="fitCenter" android:src="@drawable/smile"/>
+            <TextView android:id="@+id/pm25" android:layout_width="wrap_content" android:layout_height="match_parent" android:layout_gravity="center" android:fontFamily="@font/nanumsquareextrabold" android:gravity="center" android:text="초미세먼지 농도" android:textColor="#FFFFFF" android:textSize="20dp"/>
+        </LinearLayout>
+        //pm10
+        <LinearLayout android:layout_width="wrap_content" android:layout_height="match_parent" android:layout_margin="15dp" android:orientation="vertical">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="center" android:fontFamily="@font/nanumsquareextrabold" android:text="지금 PM10" android:textColor="#FFFFFF" android:textSize="15dp"/>
+            <ImageView android:id="@+id/pm10image" android:layout_width="160dp" android:layout_height="80dp" android:scaleType="fitCenter" android:src="@drawable/smile"/>
+            <TextView android:id="@+id/pm10" android:layout_width="wrap_content" android:layout_height="match_parent" android:layout_gravity="center" android:fontFamily="@font/nanumsquareextrabold" android:gravity="center" android:text="미세먼지 농도" android:textColor="#FFFFFF" android:textSize="20dp"/>
+        </LinearLayout>
+    </LinearLayout>
+    //맨아래 고정 버튼들
+    <LinearLayout android:layout_width="match_parent" android:layout_height="150dp" android:background="#FFFFFF" android:orientation="horizontal">
+        <LinearLayout android:layout_width="wrap_content" android:layout_height="150dp" android:layout_margin="18dp" android:orientation="vertical">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="20dp" android:text="AUTO모드\nON하면 종합 공기 수치가 좋음\n으로 측정될 때 까지\n공기청정기를 작동시킵니다.\n" android:fontFamily="@font/nanumsquareextrabold"/>
+        </LinearLayout>
+        <LinearLayout android:layout_width="wrap_content" android:layout_height="150dp" android:layout_margin="18dp" android:orientation="vertical">
+            <ImageButton android:id="@+id/exit" android:layout_width="100dp" android:layout_height="100dp" android:layout_gravity="center" android:background="@drawable/exit" android:text="help"/>
+            <TextView android:id="@+id/wind_step" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="center" android:fontFamily="@font/nanumsquareextrabold" android:includeFontPadding="false" android:text="나가기" android:textColor="#80000000" android:textSize="20sp"/>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
